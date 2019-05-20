@@ -33,6 +33,35 @@ def find_face(cascade, img, output_folder):
             cv2.imwrite(os.path.join(output_folder, "{}.jpg".format(file_name)), crop_face)
             
         #return crop_face
+		
+#todo rotate iamges
+#if no faces found rotate images left 90 deg and try again
+h,w,c = img.shape
+h = h-1
+w = w-1
+empty_img = np.zeros([h,w,3], dtype=np.uint8)
+
+for i in range(h):
+    for j in range(w):
+        empty_img[i,j] = img[j,i]
+        empty_img = empty_img[0:h,0:w]
+
+		
+#cv2.imwrite("tester1.png", empty_img)
+
+#if still no faces found try rotate original by 180 deg
+h,w,c = img.shape
+h = h-1
+w = w-1
+empty_img = np.zeros([h,w,3], dtype=np.uint8)
+
+for i in range(h):
+    for j in range(w):
+        empty_img[i,j] = img[h-i,w-j]
+        empty_img = empty_img[0:h,0:w]
+
+#cv2.imwrite("tester3.png", empty_img)
+
         
 if __name__ == '__main__':
     
@@ -65,5 +94,6 @@ if __name__ == '__main__':
         #calls find face function
         find_face(cascade, img, output_folder)
        
-        
-    
+    print("Done. Faces sent to: {}".format(os.path.join(output_folder)))
+    print("Press any key to exit")
+    input()

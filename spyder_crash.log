@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "C:\Users\hanc\AppData\Local\Continuum\anaconda3\lib\site-packages\spyder\utils\external\github.py", line 51, in <module>
+    from urllib2 import build_opener, HTTPSHandler, Request, HTTPError
+ModuleNotFoundError: No module named 'urllib2'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hanc\AppData\Local\Continuum\anaconda3\lib\site-packages\spyder\app\mainwindow.py", line 3284, in main
+    mainwindow = run_spyder(app, options, args)
+  File "C:\Users\hanc\AppData\Local\Continuum\anaconda3\lib\site-packages\spyder\app\mainwindow.py", line 3139, in run_spyder
+    main.setup()
+  File "C:\Users\hanc\AppData\Local\Continuum\anaconda3\lib\site-packages\spyder\app\mainwindow.py", line 809, in setup
+    from spyder.plugins.console import Console
+  File "C:\Users\hanc\AppData\Local\Continuum\anaconda3\lib\site-packages\spyder\plugins\console.py", line 37, in <module>
+    from spyder.widgets.reporterror import SpyderErrorDialog
+  File "C:\Users\hanc\AppData\Local\Continuum\anaconda3\lib\site-packages\spyder\widgets\reporterror.py", line 26, in <module>
+    from spyder.widgets.github.backend import GithubBackend
+  File "C:\Users\hanc\AppData\Local\Continuum\anaconda3\lib\site-packages\spyder\widgets\github\backend.py", line 33, in <module>
+    from spyder.utils.external import github
+  File "C:\Users\hanc\AppData\Local\Continuum\anaconda3\lib\site-packages\spyder\utils\external\github.py", line 58, in <module>
+    from urllib.request import build_opener, HTTPSHandler, HTTPError, Request
+ImportError: cannot import name 'HTTPSHandler' from 'urllib.request' (C:\Users\hanc\AppData\Local\Continuum\anaconda3\lib\urllib\request.py)
